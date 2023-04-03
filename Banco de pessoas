@@ -1,0 +1,115 @@
+programa
+{
+		
+inteiro opcao, numero[] = {0,0}
+		cadeia pessoa[11], nome
+		logico achou = falso
+		
+	funcao inicio()
+	{
+		
+		pessoa[0] = "Nulo"
+		
+		escreva("\t    MENU\n")
+		escreva("-----------------------------\n")
+		escreva("1- Cadastrar Pessoa\n")
+		escreva("2- Exibir Pessoa\n")
+		escreva("3- Procurar Pessoa\n")
+		escreva("4- Sair\n")
+		escreva("-----------------------------\n")
+		escreva("Escolha uma opção: ")
+		leia (opcao)
+		limpa()
+
+		escolha (opcao) {
+			caso 1:
+			escreva("\t    CADASTRO\n")
+			escreva("     (Máximo de 10 pessoas)\n")
+			escreva("---------------------------------\n")
+			escreva("Quantas pessoas deseja cadastrar? ")
+			leia(numero[1])
+			limpa()
+			se (numero[1] >= 10){
+				escreva("O número escolhido ultrapassa o\nlimite!")
+				voltar()
+			}
+			senao {
+			para (inteiro i = 1; i<= numero[1]; i++) {
+			escreva("Insira o nome da ", i, "º pessoa: ")
+			leia(pessoa[i])
+			}
+			limpa()
+			escreva("Cadastro concluído!")
+			voltar()
+			}
+			pare
+			caso 2:
+			escreva("  LISTA DE PESSOAS CADASTRADAS")
+			escreva("\n---------------------------------")
+			se (numero[1] == 0) {
+				voltarcadastro()
+			}
+			senao {
+			para (inteiro i = 1; i<= numero[1]; i++) {
+			escreva("\n",i, "º pessoa: \t", pessoa[i])
+			}
+			voltar()
+			}
+			pare
+			caso 3:
+			escreva("  BUSCA DE PESSOAS CADASTRADAS")
+			escreva("\n---------------------------------\n")
+			se (numero[1] == 0) {
+				voltarcadastro()
+			}
+			senao {
+			para (inteiro i = 1; i<= numero[1]; i++) {
+			escreva("Insira o nome que deseja \npesquisar: ")
+			leia (nome)
+			limpa()
+			se (nome == pessoa[i]){
+				escreva ("Usuário cadastrado!\nEncontrado na posição: ", i)
+				achou = verdadeiro
+				voltar()
+			}
+			senao {
+				escreva("Usuário não cadastrado!")
+				voltar()
+			}
+			}
+			
+			}
+			pare
+			caso 4:
+			escreva("Até a próxima!\n")
+			pare
+			caso contrario:
+			escreva("Opção inválida!")
+			voltar()
+			pare
+		}
+		
+		
+	}
+
+	funcao voltar() {
+		inteiro volt
+		escreva("\n---------------------------------\n")
+		escreva ("Deseja voltar ao menu? \n1- Sim\n2- Não\nInsira a opção: ")
+		leia(volt)
+		limpa()
+		se (volt == 1) {
+			inicio()
+		}
+		senao {
+			escreva("Até a próxima!\n")
+			
+		}
+	}
+
+	funcao voltarcadastro() {
+		limpa()
+		escreva("Você deve efetuar o cadastro\nprimeiro!")
+		voltar()
+	}
+}
