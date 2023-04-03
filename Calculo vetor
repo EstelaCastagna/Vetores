@@ -1,0 +1,16 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro valor[6], calc = 0
+
+		para (inteiro i = 1; i <=5; i++){
+			escreva ("Insira o ", i, "º número inteiro: ")
+			leia (valor[i])
+			limpa()
+			calc = calc + valor[i]
+	}
+	escreva("A soma dos números inteiros é: ", calc, "\n")
+}
+}
