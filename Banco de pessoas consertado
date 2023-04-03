@@ -74,9 +74,9 @@ inteiro opcao, numero[] = {0,0}
 				escreva("Usuário não cadastrado!")
 				voltar()
 			}
+			}
 			senao {
 				voltarcadastro()
-			}
 			}
 			pare
 			caso 4:
@@ -112,5 +112,6 @@ inteiro opcao, numero[] = {0,0}
 		voltar()
 	}
 }
+
 
 
